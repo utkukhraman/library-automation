@@ -1,0 +1,136 @@
+/* Ana Sayfa */
+
+.anasayfa-buton {
+    font-size: 20px;
+    padding: 15px;
+    font-weight: bold;
+    border-radius: 10px;
+    text-align: center;
+    display: block;
+}
+
+/* Kitap Ara butonu (Yeşil) */
+.anasayfa-buton-yesil {
+    background-color: #28a745;
+    color: white;
+    border: 2px solid #218838;
+}
+
+.anasayfa-buton-yesil:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+}
+
+/* Giriş Yap butonu (Mavi) */
+.anasayfa-buton-mavi {
+    background-color: #007bff;
+    color: white;
+    border: 2px solid #0056b3;
+}
+
+.anasayfa-buton-mavi:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+}
+
+/*Giriş*/
+
+.giris-govde {
+    background-color: #f8f9fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.giris-kart {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    text-align: center;
+}
+
+.giris-baslik {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.giris-hata {
+    background-color: #dc3545;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.giris-form-alani {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.giris-etiket {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.giris-girdi {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+}
+
+.giris-buton {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.giris-buton:hover {
+    background-color: #0056b3;
+}
+
+/*Panel*/
+
+.panel-navbar {
+    background-color: #007bff !important;
+}
+
+.panel-nav-link {
+    color: white !important;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 15px;
+}
+
+.panel-nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+.panel-nav-link-cikis {
+    font-weight: bold;
+    color: red !important;
+}
+
+.navbar-nav {
+    text-align: right;
+}
+
+@media (max-width: 767px) {
+    .navbar-nav {
+        text-align: center;
+    }
+}
