@@ -1,6 +1,20 @@
-/* Ana Sayfa */
+/* Genel Stiller */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
 
+h1 {
+    color: #333;
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
 
+/* Ana Sayfa Butonları */
 .anasayfa-buton {
     font-size: 20px;
     padding: 15px;
@@ -10,7 +24,6 @@
     display: block;
 }
 
-/* Kitap Ara butonu (Yeşil) */
 .anasayfa-buton-yesil {
     background-color: #28a745;
     color: white;
@@ -22,7 +35,6 @@
     border-color: #1e7e34;
 }
 
-/* Giriş Yap butonu (Mavi) */
 .anasayfa-buton-mavi {
     background-color: #007bff;
     color: white;
@@ -34,8 +46,7 @@
     border-color: #004085;
 }
 
-/*Giriş*/
-
+/* Giriş Sayfası */
 .giris-govde {
     background-color: #f8f9fa;
     display: flex;
@@ -103,8 +114,7 @@
     background-color: #0056b3;
 }
 
-/*Panel*/
-
+/* Panel Sayfası */
 .panel-navbar {
     background-color: #007bff !important;
 }
@@ -135,3 +145,59 @@
         text-align: center;
     }
 }
+
+
+/* Kitap Ekle Sayfası */
+
+.kitap-ekle-adm-container {
+    max-width: 400px; 
+    margin: 0 auto;
+    border-radius: 8px;
+    background-color: #fff;
+    padding: 20px;
+}
+
+
+.kitap-ekle-adm-container h1 {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+}
+
+.kitap-ekle-adm-label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.kitap-ekle-adm-input, .kitap-ekle-adm-select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.kitap-ekle-adm-input:focus, .kitap-ekle-adm-select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.kitap-ekle-adm-submit {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.kitap-ekle-adm-submit:hover {
+    background-color: #0056b3;
+}
+
