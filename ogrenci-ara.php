@@ -59,34 +59,39 @@ if (isset($_POST["ogrenci_no"])) {
 
     <?php if (!empty($results)): ?>
         <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Öğrenci No</th>
-                    <th>Adı Soyadı</th>
-                    <th>Durum</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($results as $ogrenci): ?>
-                    <tr>
-                        <td><?= $ogrenci["id"] ?></td>
-                        <td><?= htmlspecialchars($ogrenci["ogrenci_no"]) ?></td>
-                        <td><?= htmlspecialchars($ogrenci["adi_soyadi"]) ?></td>
-                        <td>
-                            <span class="badge durum-badge <?= $ogrenci["yasakli_mi"] ? 'bg-danger' : 'bg-success' ?>"
-                                  data-ogrenci-no="<?= htmlspecialchars($ogrenci["ogrenci_no"]) ?>"
-                                  data-ad="<?= htmlspecialchars($ogrenci["adi_soyadi"]) ?>"
-                                  data-yasakli="<?= $ogrenci["yasakli_mi"] ?>"
-                                  data-bs-toggle="modal"
-                                  data-bs-target="#confirmModal">
-                                <?= $ogrenci["yasakli_mi"] ? 'Yasaklı' : 'Aktif' ?>
-                            </span>
-                        </td>
-                    </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Öğrenci No</th>
+            <th>Adı Soyadı</th>
+            <th>Durum</th>
+            <th>Detay</th> 
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach ($results as $ogrenci): ?>
+            <tr>
+                <td><?= $ogrenci["id"] ?></td>
+                <td><?= htmlspecialchars($ogrenci["ogrenci_no"]) ?></td>
+                <td><?= htmlspecialchars($ogrenci["adi_soyadi"]) ?></td>
+                <td>
+                    <span class="badge durum-badge <?= $ogrenci["yasakli_mi"] ? 'bg-danger' : 'bg-success' ?>"
+                          data-ogrenci-no="<?= htmlspecialchars($ogrenci["ogrenci_no"]) ?>"
+                          data-ad="<?= htmlspecialchars($ogrenci["adi_soyadi"]) ?>"
+                          data-yasakli="<?= $ogrenci["yasakli_mi"] ?>"
+                          data-bs-toggle="modal"
+                          data-bs-target="#confirmModal">
+                        <?= $ogrenci["yasakli_mi"] ? 'Yasaklı' : 'Aktif' ?>
+                    </span>
+                </td>
+                <td>
+                    <a href="ogrenci-detay.php?ogrenci_no=<?= urlencode($ogrenci["ogrenci_no"]) ?>" class="btn btn-info btn-sm">Detay</a>
+                </td>
+            </tr>
+        <?php endforeach; ?>
+    </tbody>
+</table>
+
     <?php elseif ($search !== ""): ?>
         <p class="text-center text-danger">Sonuç bulunamadı.</p>
     <?php endif; ?>

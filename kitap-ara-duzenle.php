@@ -1,6 +1,5 @@
 <?php
-
-include 'veritabani.php';
+include 'menu.php'; 
 
 $search = "";
 $results = [];
@@ -38,12 +37,15 @@ ORDER BY kitaplar.kitap_id ASC";
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Kütüphane Otomasyonu - Kitap Ara</title> <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <title>Kitap Arama - Düzenle</title>
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
 
 <div class="container mt-5">
-    <h2 class="text-center">Kitap Arama</h2> <form method="POST" class="d-flex justify-content-center mb-4">
+    <h2 class="text-center">Kitap Düzenle</h2>
+
+    <form method="POST" class="d-flex justify-content-center mb-4">
         <input type="text" name="search" class="form-control w-50" placeholder="Kitap, yazar veya kategori adı girin..." value="<?= htmlspecialchars($search) ?>" />
         <button type="submit" class="btn btn-primary ms-2">Ara</button>
     </form>
@@ -60,8 +62,9 @@ ORDER BY kitaplar.kitap_id ASC";
                     <th>Sayfa Sayısı</th>
                     <th>Kategori</th>
                     <th>Dil</th>
-                    <th>Durum</th>
-                    </tr>
+                    <!--th>Durum</th-->
+                    <th>İşlem</th>
+                </tr>
             </thead>
             <tbody>
                 <?php foreach ($results as $kitap): ?>
@@ -74,12 +77,15 @@ ORDER BY kitaplar.kitap_id ASC";
                     <td><?= $kitap["sayfa_sayisi"] ?></td>
                     <td><?= htmlspecialchars($kitap["kategori_adi"] ?? "Bilinmiyor") ?></td>
                     <td><?= htmlspecialchars($kitap["dil_adi"] ?? "Bilinmiyor") ?></td>
-                    <td>
+                    <!--td>
                         <span class="badge <?= $kitap['emanet'] ? 'bg-danger' : 'bg-success' ?>">
                             <?= $kitap['emanet'] ? 'Emanet' : 'Kütüphane' ?>
                         </span>
+                    </td-->
+                    <td>
+                        <a href="kitap-duzenle.php?id=<?= $kitap['kitap_id'] ?>" class="btn btn-warning btn-sm">Düzenle</a>
                     </td>
-                    </tr>
+                </tr>
                 <?php endforeach; ?>
             </tbody>
         </table>
@@ -87,7 +93,7 @@ ORDER BY kitaplar.kitap_id ASC";
         <p class="alert alert-warning text-center">Sonuç bulunamadı.</p>
     <?php endif; ?>
 </div>
-
+    </br></br>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <?php include 'footer.php'; ?>
 </body>
