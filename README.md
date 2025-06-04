@@ -35,7 +35,7 @@ Projede bir sürü sayfa var, her birinin farklı bir görevi var:
     * En çok kitap alan 5 öğrenci.
     * Teslim tarihi en yakın 5 emanet.
 
-![](https://files.utkukahraman.dev/isu/2/bahar/bitirme-projesi/panel.png)
+![](https://files.utkukahraman.dev/isu/2/bahar/bitirme-projesi/panel1.png)
 
 **3. Kitap İşlemleri:**
 * **`kitap-ekle.php`:** Kütüphaneye yeni kitap ekleme sayfası.
